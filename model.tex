@@ -13,7 +13,7 @@
     \section{第一题}
     \subsection{问题分析}
     \subsubsection*{分析方式}
-    编程：python语言
+    编程：Python语言
 
     所需第三方库：numpy,matplotlib
     
@@ -35,26 +35,39 @@
     \subsection{拟合结果}
     三次：$y=3.734x^3-150.8x^2+1251x-2447$
 
-    $\Delta_3=6146.0500$
+    $\Delta_3=1122.1100$
     \begin{figure}[H]
         \includegraphics[scale=0.4]{1-3.png}
     \end{figure}
     四次：$y=0.2556x^4-12.13x^3+169.2x^2-1041x+1633$
+
+    $\Delta_4=502.2787$
     \begin{figure}[H]
         \includegraphics[scale=0.4]{1-4.png}
     \end{figure}
     五次：$y=0.01262x^5-0.7224x^4+15.01x^3-152.9x^2-464.9x-236.6$
+
+    $\Delta_5=322.8720$
     \begin{figure}[H]
         \includegraphics[scale=0.4]{1-5.png}
     \end{figure}
     六次：$y=-5.661\times 10^{-5} x^6+0.01787x^5-0.9075x^4+18.09x^3-177.4x^2+545.3x-309.3$
+
+    $\Delta_6=319.3721$
     \begin{figure}[H]
         \includegraphics[scale=0.4]{1-6.png}
     \end{figure}
+    \clearpage
     七次：$y=-5.622\times10^{-5}x^7+0.006036x^6-0.2443x^5+4.778x^4-47.04x^3+198.1x^2-382x+331.3$
+
+    $\Delta_7=498.2919$
     \begin{figure}[H]
         \includegraphics[scale=0.4]{1-7.png}
     \end{figure}
+    \subsection{对比分析}
+    误差排序：$\Delta_6<\Delta_5<\Delta_7<\Delta_4<\Delta_3$
+    在所记录的5个不同次数的多项式中，六次多项式和五次多项式的拟合效果较好，因为误差较小。
+
     \clearpage
 
     \section{第二题}
@@ -87,4 +100,22 @@
         \centering
         \includegraphics[scale=0.4]{circle.png}
     \end{figure}
+
+    \section{第三题}
+    \subsection{分析问题}
+    \subsubsection*{题目}
+    俄罗斯方块是一款家喻户晓的电子游戏，小数对其深感兴趣，将其简化规则如下：
+    \begin{itemize}
+        \item 游戏中，一共有四种基础方块
+        \item 每一轮游戏中，给定的基础方块的种类和数目一定，但摆放方块的先后顺序锁定，不可更改
+        \item 游戏提供的“方格容器”宽度为八个单位长度，高度无限每一个基础方块都可以进行自由旋转、翻转
+        \item 玩家的最终目的是使用最小的高度完成所有方块的摆放
+        \item 得到摆放完整的一行并不可以消除方块，但可以得到额外加分
+    \end{itemize}
+
+    1. 根据题目描述，给出一种界定方块摆放有效率的方式(即这个游戏的分数计算方式),并用数学语言进行描述。
+
+    2. 若某一局游戏中，方块下落的顺序已提前知晓如图2所示，试找到赢得这场比赛的最佳策略并用文字语言、数学语言或者图表描述你的策略.并根据你提供的计分方式得出结果。
+    \subsubsection{第一小问}
+    根据“玩家的最终目的是使用最小的高度完成所有方块的摆放”，可以看出，层数越高分数应该越低。根据“得到摆放完整的一行并不可以消除方块，但可以得到额外加分”，可以看出，分数计算方式应该考虑到完整的一行加分。其余条件与分数无关。
 \end{document}

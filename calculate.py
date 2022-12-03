@@ -23,4 +23,4 @@ for i in range(0,len(a)):
     temp=calculate3(a[i])
     sum+=(temp-b[i])**2
     print(temp)
-print("R =",math.sqrt(sum))
+print("R =",math.sqrt(sum/len(a)))
