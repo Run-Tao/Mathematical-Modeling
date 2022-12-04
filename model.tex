@@ -6,6 +6,7 @@
 \date{\zhtoday}
 
 \usepackage{url,appendix,graphicx,float,multicol}
+\usepackage[version=4]{mhchem}
 \begin{document}
 
     \maketitle
@@ -85,23 +86,36 @@
 
     根据化简后问题“一张面皮对应的馅料的质量”以及物理公式$m=\rho V$,需要知道馅料的密度以及一张面皮中能放多少体积的馅料。而一张面皮中能放多少体积的馅料取决于面皮的大小，所以需要设定面皮的边长或者直径（或半径）。
     \subsection{建立模型}
-    将馅料看作一个椭球体（如下图所示）。
+    将馅料看作一个长径为$r_1~cm$,两条短径相同均为$r_2~cm$的椭球体（如下图所示）。
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.2]{ellipsoids.png}
     \end{figure}
-    将馄饨皮近似看成以a为边长的正方形（如图所示）
+    将馄饨皮近似看成以$a~cm$为边长的正方形（如图所示）
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{square.png}
     \end{figure}
-    将饺子皮近似看成以a为半径的圆
+    将饺子皮近似看成以$a~cm$为半径的圆
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.4]{circle.png}
     \end{figure}
-    需要考虑到饺子/馄饨皮并不是完全用于包裹馅料，还需要有部分用来粘合和包外层的褶皱
+    需要考虑到饺子/馄饨皮并不是完全用于包裹馅料，还需要有部分用来粘合和包外层的褶皱。对于饺子皮而言，可以看作有一圈周围的圆环用于粘合，实际包裹馅料的面积应减掉圆环部分。通过观察，周围褶皱部分宽度$w~cm$大概为半径的$\dfrac{1}{3}$到$\dfrac{1}{2}$左右，此处折中考虑，即为$w=\dfrac{\frac{1}{3}+\frac{1}{2}}{2}a=\dfrac{5}{12}a~cm$
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.25]{circle_1.png}
+    \end{figure}
+    
+    则馅料椭球体的长径$r_1$约为$a-w=\dfrac{7}{12}a~cm$，两条短径相等，$r_2$约为$\dfrac{r_1}{2}=\dfrac{a-w}{2}=\dfrac{\dfrac{7}{12}a}{2}=\dfrac{7}{24}a~cm$，根据椭球体体积公式：$V=\dfrac{4}{3}\pi abc$，则馅料的体积约为$V_{fill}=\dfrac{4}{3}\pi r_1r_2^2=\dfrac{4}{3}\pi \cdot \dfrac{7}{12}a \cdot (\dfrac{7}{24}a)^2=\dfrac{343}{5184}\pi a^3~cm^3$
 
+    经调查，$\rho_{fat}=0.74g/cm^3,\rho_{muscle}=1.12g/cm^3$
+    
+    一般做馄饨/饺子的肉馅中肥肉（主体为脂肪）和瘦肉（主体为肌肉）的比例约为3:7，所以$\rho_{fill}=\dfrac{3\rho_{fat}+7\rho_{muscle}}{10}=1.006g/cm^3$。又饺子馅中需要加酱油等调料和水，所以将馅料的密度近似看为水的密度，方便计算，即$\rho_{fill}\approx\rho_{\ce{H2O}}=1g/cm^3$
+
+    所以$m_{fill}=p_{fill}V_{fill}=1g/cm^3 \cdot \dfrac{343}{5184}\pi a^3~cm^3=\dfrac{343}{5184}\pi a^3~g$
+
+    所以$num_{Wonton}=\lfloor 1kg/m_{fill} \rfloor=\lfloor \dfrac{5184000}{343\pi a^3}\rfloor$
     \clearpage
     \section{第三题}
     \subsection{分析问题}
@@ -130,5 +144,7 @@
 
     既然对于每一局，给定的基础方块的种类和数目一定，所以覆盖的总面积应该是已知的。将基础方块进行编号，“$1\times4$”的蓝色方块标记为1号，“$2\times2$”的橙色方块标记为2号，凸状的黄色方块标记为3号，类似“7”的绿色方块标记为4号。记一共出现i号方块$cnt_i$次$(1\leqslant i\leqslant 4,i\in\mathbb{Z})$，则方块覆盖面积$\displaystyle A=\sum_{i=1}^4 4cnt_i=4\sum_{i=1}^4 cnt_i$。
     
-    摆放的理论最高高度为$\displaystyle H_{max}=4cnt_1+2cnt_2+3cnt_3+3cnt_4=3\sum_{i=1}^4{cnt_i}+cnt_1-cnt_2. $因为“方格容器”宽度为8个单位长度，所以摆放的理论最小高度为$\displaystyle H_{min}=\lceil \dfrac{A}{8} \rceil=\lceil \frac{1}{2}\sum_{i=1}^4 cnt_i \rceil.$所以摆放的高度范围为:$\displaystyle 3\sum_{i=1}^4{cnt_i}+cnt_1-cnt_2 \leqslant H \leqslant \lceil \dfrac{1}{2} \sum_{i=1}^4 cnt_i\rceil $
+    摆放的理论最大高度为$\displaystyle H_{max}=4cnt_1+2cnt_2+3cnt_3+3cnt_4=cnt_1-cnt_2+3\sum_{i=1}^4{cnt_i}. $因为“方格容器”宽度为8个单位长度，所以摆放的理论最小高度为$\displaystyle H_{min}=\lceil \dfrac{A}{8} \rceil=\lceil \frac{1}{2}\sum_{i=1}^4 cnt_i \rceil.$所以摆放的高度范围为:$\displaystyle \lceil \dfrac{1}{2} \sum_{i=1}^4 cnt_i\rceil \leqslant H \leqslant cnt_1-cnt_2+3\sum_{i=1}^4{cnt_i}$
+
+    设摆放的实际最小高度为${H\_F}_{min}$，则${H\_F}_{min}\geqslant H_{max}$
 \end{document}
