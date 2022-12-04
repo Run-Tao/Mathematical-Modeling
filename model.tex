@@ -128,7 +128,7 @@
 
     假设分数函数为$F(x)=S(x)+Ex(x)$,其中$S(x)$为高度所对应的分数,$Ex(x)$为摆放完整的行所对应的加分。则$\displaystyle\lim_{x\rightarrow \infty}S(x)=0$
 
-    既然对于每一局，给定的基础方块的种类和数目一定，所以覆盖的总面积应该是已知的。将基础方块进行编号，“$1\times4$”的蓝色方块标记为1号，“$2\times2$”的橙色方块标记为2号，凸状的黄色方块标记为3号，类似“7”的绿色方块标记为4号。记一共出现i号方块$cnt_i$次$(1\leqslant i\leqslant 4,i\in\mathbb{Z})$，则方块覆盖面积$A=\sum_{i=1}^4cnt_i$。
+    既然对于每一局，给定的基础方块的种类和数目一定，所以覆盖的总面积应该是已知的。将基础方块进行编号，“$1\times4$”的蓝色方块标记为1号，“$2\times2$”的橙色方块标记为2号，凸状的黄色方块标记为3号，类似“7”的绿色方块标记为4号。记一共出现i号方块$cnt_i$次$(1\leqslant i\leqslant 4,i\in\mathbb{Z})$，则方块覆盖面积$\displaystyle A=\sum_{i=1}^4 4cnt_i=4\sum_{i=1}^4 cnt_i$。
     
-    因为“方格容器”宽度为8个单位长度，所以摆放的理论最小高度为$\lceil \dfrac{A}{8} \rceil$
+    摆放的理论最高高度为$\displaystyle H_{max}=4cnt_1+2cnt_2+3cnt_3+3cnt_4=3\sum_{i=1}^4{cnt_i}+cnt_1-cnt_2. $因为“方格容器”宽度为8个单位长度，所以摆放的理论最小高度为$\displaystyle H_{min}=\lceil \dfrac{A}{8} \rceil=\lceil \frac{1}{2}\sum_{i=1}^4 cnt_i \rceil.$所以摆放的高度范围为:$\displaystyle 3\sum_{i=1}^4{cnt_i}+cnt_1-cnt_2 \leqslant H \leqslant \lceil \dfrac{1}{2} \sum_{i=1}^4 cnt_i\rceil $
 \end{document}

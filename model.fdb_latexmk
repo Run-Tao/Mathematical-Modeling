@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1670129272 "d:/TaoLi/SES/数学建模/model.tex" "model.pdf" "model" 1670129275
+["pdflatex"] 1670136183 "d:/TaoLi/SES/数学建模/model.tex" "model.pdf" "model" 1670136186
   "1-3.png" 1669989170 22371 35c43c2a8ed875a6ab2e2c4bd59457fd ""
   "1-4.png" 1669989219 22678 49f4510b6180d14efca5dfb7886861a4 ""
   "1-5.png" 1669989246 23147 821045e93e574ee70942bd8e89bd9360 ""
@@ -12,7 +12,7 @@
   "c:/Windows/Fonts/simkai.ttf" 1651842600 11787328 76179557c160634a761c845ea111c893 ""
   "c:/Windows/Fonts/simsun.ttc" 1651900759 17909384 a31f28cad247ad739adf0891b0f2f7f2 ""
   "circle.png" 1670032003 21129 317a35c209219e5b0bb4c7903e6d38fe ""
-  "d:/TaoLi/SES/数学建模/model.tex" 1670129271 6960 37fb99e1a16aceeedd8e27f61626c942 ""
+  "d:/TaoLi/SES/数学建模/model.tex" 1670136182 7326 28b31be9e6a4308d15dcb67d632ee0df ""
   "e:/texlive/2022/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1661664858 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "e:/texlive/2022/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1661665285 3124 3813fd4c981d99822890a2861b0d274c ""
   "e:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1661664462 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -279,9 +279,9 @@
   "e:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1661665595 2826505 d433eee4a89e7fb02391362b5811460d ""
   "e:/texlive/2022/texmf.cnf" 1661665519 713 e69b156964470283e0530f5060668171 ""
   "ellipsoids.png" 1669974641 90592 99f9429529dc07ed0e88e3f1c0c40791 ""
-  "model.aux" 1670129274 1876 3d5be0c20c3072a5bbbc2934a596165c "pdflatex"
-  "model.out" 1670129274 835 052488f0a7cdaa168411d2054cec286e "pdflatex"
-  "model.tex" 1670129271 6960 37fb99e1a16aceeedd8e27f61626c942 ""
+  "model.aux" 1670136185 1876 3d5be0c20c3072a5bbbc2934a596165c "pdflatex"
+  "model.out" 1670136185 835 052488f0a7cdaa168411d2054cec286e "pdflatex"
+  "model.tex" 1670136182 7326 28b31be9e6a4308d15dcb67d632ee0df ""
   "square.png" 1670052220 24609 9229f81b64d399192c2d1158f438c63f ""
   (generated)
   "model.aux"
